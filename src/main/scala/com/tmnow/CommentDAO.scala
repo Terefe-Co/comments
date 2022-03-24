@@ -7,7 +7,7 @@ object CommentDAO {
 
   import S.profile.api._
 
-  def insert(name: String) = ???
+  def insert(row: CommentRow) = ???
   def delete(id: Long) = ???
   def update(id: Long, name: String) = ???
   def getAll = ???

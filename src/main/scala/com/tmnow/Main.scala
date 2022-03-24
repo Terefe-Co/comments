@@ -1,8 +1,9 @@
 package com.tmnow
 
 import cats.effect._
-import org.http4s.HttpApp
 import org.http4s.blaze.server.BlazeServerBuilder
+import org.http4s.HttpApp
+import org.http4s.server.middleware.Logger
 import org.http4s.server.Router
 import org.http4s.server.Server
 
@@ -14,10 +15,11 @@ object Main extends IOApp {
 }
 
 object BlazeApp {
-  val app =
+  val app = Logger.httpApp(true, true)(
     Router(
       "/service" -> CommentController.routes
     ).orNotFound
+  )
 
   def resource: Resource[IO, Server] = {
     BlazeServerBuilder[IO]

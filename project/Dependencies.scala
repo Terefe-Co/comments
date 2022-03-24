@@ -4,12 +4,16 @@ object Dependencies {
 
   lazy val Specs2 = "org.specs2" %% "specs2-core" % "4.14.1"
 
-  val SlickV =  "3.4.0-M1"
+  val LogBackClassic =
+    // "ch.qos.logback" % "logback-classic" % "1.2.11" exclude("org.slf4j", "slf4j-api")
+    "ch.qos.logback" % "logback-classic" % "1.3.0-alpha14"
+
+  val SlickV = "3.4.0-M1"
   lazy val Slick = Seq(
-      "com.typesafe.slick" %% "slick" % SlickV,
-      "com.typesafe.slick"  %% "slick-hikaricp" % SlickV,
-      "org.postgresql" %  "postgresql" % "42.2.10"
-    )
+    "com.typesafe.slick" %% "slick" % SlickV,
+    "com.typesafe.slick" %% "slick-hikaricp" % SlickV,
+    "org.postgresql" % "postgresql" % "42.2.10"
+  )
 
   private val http4sVersion = "0.23.10"
   def HttpServerLibs = Seq(
