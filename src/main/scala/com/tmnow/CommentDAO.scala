@@ -9,7 +9,7 @@ object CommentDAO {
 
   def insert(row: CommentRow) = ???
   def delete(id: Long) = ???
-  def update(id: Long, name: String) = ???
+  def update(id: Long, message: String) = ???
   def getAll = ???
   def getById(id: Long) = ???
 
