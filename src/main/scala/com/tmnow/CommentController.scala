@@ -14,7 +14,7 @@ object CommentController extends Http4sDsl[IO] {
     case req @ GET -> Root / "comments"       => ServeReponse.allComments(req)
     case req @ GET -> Root / "comments-by-id" => ServeReponse.commentById(req)
     case req @ PUT -> Root / "update-by-id"   => ServeReponse.update(req)
-    case GET -> Root / "ping"   => Ok("pong")
+    case GET -> Root / "ping"                 => Ok("pong")
   }
 
   object ServeReponse {
