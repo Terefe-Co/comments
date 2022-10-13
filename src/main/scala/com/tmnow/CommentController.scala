@@ -45,7 +45,7 @@ object CommentController extends Http4sDsl[IO] {
 
     // TODO: Implement create
     def create(req: Request[IO]) = {
-      val message = req.params("name")
+      val message = req.params("message")
       Ok(s"Created $message")
     }
   }

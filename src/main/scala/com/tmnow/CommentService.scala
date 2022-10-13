@@ -6,10 +6,10 @@ object CommentService {
 
   val db = CommentSchema.db
 
-  def insert(row: CommentRow): IO[Unit] = ???
+  def insert(row: CommentRow): IO[Boolean] = ???
   def getAll: IO[List[CommentRow]] = ???
   def getById(id: Long): IO[Option[CommentRow]] = ???
-  def update(id: Long, message: String): IO[Unit] = ???
-  def delete(id: Long): IO[Unit] = ???
+  def update(id: Long, message: String): IO[Boolean] = ???
+  def delete(id: Long): IO[Boolean] = ???
 
 }
