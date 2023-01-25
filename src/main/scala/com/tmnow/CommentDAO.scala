@@ -9,7 +9,8 @@ object CommentDAO {
   def insert(row: CommentRow): DBIO[Boolean] = ???
   def delete(id: Long): DBIO[Boolean] = ???
   def update(id: Long, message: String): DBIO[Boolean] = ???
-  def getAll: DBIO[List[CommentRow]] = ???
-  def getById(id: Long): DBIO[Option[CommentRow]] = ???
 
+
+  // Fetch comment by id with author and replies
+  def getById(id: Long): DBIO[List[(CommentRow, UserRow, Option[(CommentRow, UserRow)])]]  = ???
 }

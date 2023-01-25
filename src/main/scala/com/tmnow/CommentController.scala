@@ -11,7 +11,7 @@ object CommentController extends Http4sDsl[IO] {
 
   def routes = HttpRoutes.of[IO] {
     case req @ POST -> Root / "comments"      => ServeReponse.create(req)
-    case req @ GET -> Root / "comments"       => ServeReponse.allComments(req)
+    case req @ GET -> Root / "comments"       => ServeReponse.allsComments(req)
     case req @ GET -> Root / "comments-by-id" => ServeReponse.commentById(req)
     case req @ PUT -> Root / "update-by-id"   => ServeReponse.update(req)
     case GET -> Root / "ping"                 => Ok("pong")
@@ -25,14 +25,14 @@ object CommentController extends Http4sDsl[IO] {
       Ok(s"Comment $id".asJson)
     }
 
-    // TODO: implement get all comments
-    def allComments(req: Request[IO]) = {
+    // TODO: implement get all comments by userId
+    def allsComments(req: Request[IO]) = {
       val now = java.time.Instant.now
 
       val result = List(
-        CommentRow(1, "comment1", now, now),
-        CommentRow(2, "comment2", now, now),
-        CommentRow(3, "comment3", now, now)
+        CommentRow(1, Some(1), 1,"comment1", now, now),
+        CommentRow(2, Some(1), 1,"comment2", now, now),
+        CommentRow(3, Some(1), 1,"comment3", now, now)
       )
       Ok(result.asJson)
     }
