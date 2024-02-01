@@ -23,3 +23,10 @@ case class Comment(
     created: Instant,
     modified: Instant
 )
+
+@JsonCodec
+case class CreateComment(
+    message: String,
+    parentId: Option[Long],
+    authorId: Long
+)

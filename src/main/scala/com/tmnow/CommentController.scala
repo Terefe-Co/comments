@@ -2,6 +2,7 @@ package com.tmnow
 
 import cats.effect._
 import cats.syntax.all._
+import com.tmnow.models.CreateComment
 import io.circe.syntax._
 import org.http4s._
 import org.http4s.circe._
@@ -17,6 +18,8 @@ object CommentController extends Http4sDsl[IO] {
     case GET -> Root / "ping"                 => Ok("pong")
   }
 
+  implicit val createCommentEntityEncoder: EntityDecoder[IO, CreateComment] = jsonOf[IO, CreateComment]
+
   object ServeReponse {
 
     // TODO: implement get comment by id
@@ -30,9 +33,9 @@ object CommentController extends Http4sDsl[IO] {
       val now = java.time.Instant.now
 
       val result = List(
-        CommentRow(1, Some(1), 1,"comment1", now, now),
-        CommentRow(2, Some(1), 1,"comment2", now, now),
-        CommentRow(3, Some(1), 1,"comment3", now, now)
+        CommentRow(1, Some(1), 1, "comment1", now, now),
+        CommentRow(2, Some(1), 1, "comment2", now, now),
+        CommentRow(3, Some(1), 1, "comment3", now, now)
       )
       Ok(result.asJson)
     }
@@ -45,8 +48,7 @@ object CommentController extends Http4sDsl[IO] {
 
     // TODO: Implement create
     def create(req: Request[IO]) = {
-      val message = req.params("message")
-      Ok(s"Created $message")
+      Ok(s"Created")
     }
   }
 }
