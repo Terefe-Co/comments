@@ -8,7 +8,9 @@ object CommentService {
   val db = CommentSchema.db
 
   def insert(row: CommentRow): IO[Boolean] = ???
+
   def update(id: Long, message: String): IO[Boolean] = ???
+
   def delete(id: Long): IO[Boolean] = ???
 
   // Fetch comments for a user

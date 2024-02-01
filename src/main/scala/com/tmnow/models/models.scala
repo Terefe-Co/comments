@@ -1,9 +1,10 @@
 package com.tmnow.models
 
-import java.time.Instant
-import io.circe.generic.JsonCodec
-import com.tmnow.UserRow
 import com.tmnow.CommentRow
+import com.tmnow.UserRow
+import io.circe.generic.JsonCodec
+
+import java.time.Instant
 
 @JsonCodec
 case class User(

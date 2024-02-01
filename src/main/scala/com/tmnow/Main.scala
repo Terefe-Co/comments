@@ -1,11 +1,11 @@
 package com.tmnow
 
 import cats.effect._
-import org.http4s.blaze.server.BlazeServerBuilder
 import org.http4s.HttpApp
-import org.http4s.server.middleware.Logger
+import org.http4s.blaze.server.BlazeServerBuilder
 import org.http4s.server.Router
 import org.http4s.server.Server
+import org.http4s.server.middleware.Logger
 
 object Main extends IOApp {
   override def run(args: List[String]): IO[ExitCode] =

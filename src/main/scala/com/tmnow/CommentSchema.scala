@@ -1,11 +1,11 @@
 package com.tmnow
 
+import io.circe.generic.JsonCodec
 import io.circe.generic.semiauto._
 import slick.jdbc.JdbcBackend.Database
 import slick.jdbc.PostgresProfile
 
 import java.time.Instant
-import io.circe.generic.JsonCodec
 
 trait PostgresSettings {
   val profile: slick.jdbc.PostgresProfile = PostgresProfile
@@ -30,9 +30,6 @@ case class CommentRow(
     created: Instant,
     modified: Instant
 )
-// object CommentRow {
-//   implicit val jsonFmt = deriveEncoder[CommentRow]
-// }
 
 object CommentSchema extends PostgresSettings {
 
