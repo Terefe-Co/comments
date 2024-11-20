@@ -2,13 +2,13 @@ import sbt._
 
 object Dependencies {
 
-  lazy val Specs2 = "org.specs2" %% "specs2-core" % "4.14.1"
+  lazy val Specs2 = "org.specs2" %% "specs2-core" % "4.20.9"
 
   val LogBackClassic =
     // "ch.qos.logback" % "logback-classic" % "1.2.11" exclude("org.slf4j", "slf4j-api")
     "ch.qos.logback" % "logback-classic" % "1.3.0-alpha14"
 
-  val SlickV = "3.4.0-M1"
+  val SlickV = "3.5.2"
   lazy val Slick = Seq(
     "com.typesafe.slick" %% "slick" % SlickV,
     "com.typesafe.slick" %% "slick-hikaricp" % SlickV,
@@ -30,14 +30,13 @@ object Dependencies {
     ))
   )
 
-  val circeVersion = "0.14.1"
+  val circeVersion = "0.15.0-M1"
   def CirceLibs =
     Seq(
       "io.circe" %% "circe-core" % circeVersion,
       "io.circe" %% "circe-generic" % circeVersion,
-      "io.circe" %% "circe-generic-extras" % circeVersion,
       "io.circe" %% "circe-parser" % circeVersion,
-      "io.circe" %% "circe-optics" % "0.12.0"
+      "io.circe" %% "circe-optics" % "0.15.0"
     )
 
 }

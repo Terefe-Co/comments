@@ -9,7 +9,7 @@ import java.time.Instant
 
 trait PostgresSettings {
   val profile: slick.jdbc.PostgresProfile = PostgresProfile
-  val db: slick.jdbc.JdbcBackend.DatabaseDef = Database.forConfig("postgres")
+  val db: slick.jdbc.JdbcBackend.Database = Database.forConfig("postgres")
 }
 
 @JsonCodec
