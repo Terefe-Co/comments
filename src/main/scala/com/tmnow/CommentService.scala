@@ -8,6 +8,7 @@ object CommentService {
   val db = CommentSchema.db
 
   def insert(row: CommentRow): IO[Boolean] = ???
+    // db.run(dao.insert(row)).asIO
 
   def update(id: Long, message: String): IO[Boolean] = ???
 
